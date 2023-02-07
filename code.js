@@ -28,40 +28,86 @@ const butt0 = document.querySelector('#fifthline > button:nth-child(1)');
 const buttPeriod = document.querySelector('#fifthline > button:nth-child(2)');
 const buttEqual = document.querySelector('#fifthline > button:nth-child(3)');
 
-var total = 0;
+//if current string is 0, replaces 0 with the number clicked
+function not0(){
+    if(screen.innerText === '0'){
+        screen.innerText = '';
+    }
+};
 
+//event listener for each number button (0 - 9)
+butt0.addEventListener('click',function(){
+    screen.innerText += butt0.innerText;
+})
 butt1.addEventListener('click',function(){
+    not0();
     screen.innerText += butt1.innerText;
 });
 
 butt2.addEventListener('click',function(){
+    not0();
     screen.innerText += butt2.innerText;
 });
 
 butt3.addEventListener('click',function(){
+    not0();
     screen.innerText += butt3.innerText;
 });
 
 butt4.addEventListener('click',function(){
+    not0();
     screen.innerText += butt4.innerText;
 });
 
 butt5.addEventListener('click',function(){
+    not0();
     screen.innerText += butt5.innerText;
 });
 
 butt6.addEventListener('click',function(){
+    not0();
     screen.innerText += butt6.innerText;
 });
 
 butt7.addEventListener('click',function(){
+    not0();
     screen.innerText += butt7.innerText;
 });
 
 butt8.addEventListener('click',function(){
+    not0();
     screen.innerText += butt8.innerText;
 });
 
 butt9.addEventListener('click',function(){
+    not0();
     screen.innerText += butt9.innerText;
+});
+
+//event listeners for every other button
+buttAc.addEventListener('click',function(){
+    screen.innerText = '0';
+});
+
+buttPlus.addEventListener('click',function(){
+    screen.innerText += '+';
+});
+
+buttEqual.addEventListener('click', function(){
+    if(screen.innerText.includes('x')){
+        screen.innerText = screen.innerText.replace('x','*');
+    }
+    screen.innerText = eval(screen.innerText);
+});
+
+buttMinus.addEventListener('click',function(){
+    screen.innerText += '-';
+});
+
+buttPeriod.addEventListener('click',function(){
+    screen.innerText += '.';
+});
+
+buttX.addEventListener('click',function(){
+    screen.innerText += 'x';
 });
