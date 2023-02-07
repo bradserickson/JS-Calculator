@@ -1,0 +1,10 @@
+button {
+    width: 4rem;
+    height: 4rem;
+}
+
+#displayBox {
+    border: 3px solid black;
+    height: 4rem;
+    width: 16rem;
+}
