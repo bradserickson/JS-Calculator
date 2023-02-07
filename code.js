@@ -18,14 +18,18 @@ const butt6 = document.querySelector('#thirdline > button:nth-child(3)');
 const buttMinus = document.querySelector('#thirdline > button:nth-child(4)');
 
 //variables for the fourth line
-const butt1 = document.querySelector('fourthline > button:nth-child(1)');
-const butt2 = document.querySelector('fourthline > button:nth-child(2)');
-const butt3 = document.querySelector('fourthline > button:nth-child(3)');
+const butt1 = document.querySelector('#fourthline > button:nth-child(1)');
+const butt2 = document.querySelector('#fourthline > button:nth-child(2)');
+const butt3 = document.querySelector('#fourthline > button:nth-child(3)');
 const buttPlus = document.querySelector('fourthline > button:nth-child(4)');
 
 //variables for the fifth line
-const butt0 = document.querySelector('fifthline > button.nth-child(1)');
-const buttPeriod = document.querySelector('fifthline > button.nth-child(1)');
-const buttEqual = document.querySelector('fifthline > button.nth-child(1)');
+const butt0 = document.querySelector('#fifthline > button:nth-child(1)');
+const buttPeriod = document.querySelector('#fifthline > button:nth-child(2)');
+const buttEqual = document.querySelector('#fifthline > button:nth-child(3)');
 
-const allButtons = [buttAC, buttPosNeg, buttPercent, buttDiv, butt7, butt8, butt9, buttX, butt4, butt5, butt6, buttMinus, butt1, butt2, butt3, buttPlus, butt0, buttPeriod, buttEqual];
+butt1.addEventListener('click',function(){
+    screen += butt1.innerText;
+    console.log(screen);
+
+})
