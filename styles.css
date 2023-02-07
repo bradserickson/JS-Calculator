@@ -4,7 +4,9 @@ button {
 }
 
 #displayBox {
+    display: inline-block;
     border: 3px solid black;
-    height: 4rem;
-    width: 16rem;
+    height: rem;
+    width: 15rem;
+    padding: 10px;
 }
