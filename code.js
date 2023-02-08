@@ -1,7 +1,7 @@
 var screen = document.querySelector("#displayBox");
 //variables for the first line
 const buttAc = document.querySelector('#firstline > button:nth-child(1)');
-const buttPosNeg = document.querySelector('#firstline > button:nth-child(2)');
+//const buttPosNeg = document.querySelector('#firstline > button:nth-child(2)');
 const buttPercent = document.querySelector('#firstline > button:nth-child(3)');
 const buttDiv = document.querySelector('#firstline > button:nth-child(4)');
 
@@ -90,18 +90,33 @@ buttAc.addEventListener('click',function(){
 });
 
 buttPlus.addEventListener('click',function(){
-    screen.innerText += '+';
+    screen.innerHTML += ' +&nbsp';
 });
 
 buttEqual.addEventListener('click', function(){
     if(screen.innerText.includes('x')){
         screen.innerText = screen.innerText.replace('x','*');
     }
+    if(screen.innerText.includes('÷')){
+        screen.innerText = screen.innerText.replace('÷','/');
+    }
+    // screen.innerText = screen.innerText.replace('&nbsp',' ');
     screen.innerText = eval(screen.innerText);
 });
 
+buttPercent.addEventListener('click', function(){
+    if(screen.innerText.includes('x')){
+        screen.innerText = screen.innerText.replace('x','*');
+    }
+    if(screen.innerText.includes('÷')){
+        screen.innerText = screen.innerText.replace('÷','/');
+    }
+    // screen.innerText = screen.innerText.replace('&nbsp',' ');
+    screen.innerText = 0.10*(eval(screen.innerText));
+});
+
 buttMinus.addEventListener('click',function(){
-    screen.innerText += '-';
+    screen.innerHTML += ' -&nbsp';
 });
 
 buttPeriod.addEventListener('click',function(){
@@ -109,5 +124,29 @@ buttPeriod.addEventListener('click',function(){
 });
 
 buttX.addEventListener('click',function(){
-    screen.innerText += 'x';
+    screen.innerHTML += ' x&nbsp';
 });
+
+buttDiv.addEventListener('click',function(){
+    screen.innerHTML += ' ÷&nbsp'
+});
+
+
+// buttPosNeg.addEventListener('click', function(){
+//     let str = screen.innerHTML
+//     let start = str.lastIndexOf('&nbsp') + 6;
+//     let lastNumber = str.substring(start, str.length);
+//     // console.log(start);
+//     // console.log(lastNumber);
+//     // console.log(screen.innerHTML[number]);
+//     let posOrNeg = Math.sign(lastNumber);
+//     console.log(posOrNeg);
+
+//     // if (posOrNeg = 1){
+//     //     console.log('positive');
+//     // };
+//     if (toString(posOrNeg) = '-1'){
+//         console.log('negative');
+//     };
+// });
+    
