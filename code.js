@@ -1,7 +1,7 @@
 var screen = document.querySelector("#displayBox");
 //variables for the first line
 const buttAc = document.querySelector('#firstline > button:nth-child(1)');
-//const buttPosNeg = document.querySelector('#firstline > button:nth-child(2)');
+const buttPosNeg = document.querySelector('#firstline > button:nth-child(2)');
 const buttPercent = document.querySelector('#firstline > button:nth-child(3)');
 const buttDiv = document.querySelector('#firstline > button:nth-child(4)');
 
@@ -131,22 +131,10 @@ buttDiv.addEventListener('click',function(){
     screen.innerHTML += ' ÷&nbsp'
 });
 
-
-// buttPosNeg.addEventListener('click', function(){
-//     let str = screen.innerHTML
-//     let start = str.lastIndexOf('&nbsp') + 6;
-//     let lastNumber = str.substring(start, str.length);
-//     // console.log(start);
-//     // console.log(lastNumber);
-//     // console.log(screen.innerHTML[number]);
-//     let posOrNeg = Math.sign(lastNumber);
-//     console.log(posOrNeg);
-
-//     // if (posOrNeg = 1){
-//     //     console.log('positive');
-//     // };
-//     if (toString(posOrNeg) = '-1'){
-//         console.log('negative');
-//     };
-// });
-    
+buttPosNeg.addEventListener('click', function(){
+    let str = screen.innerHTML;
+    let index = str.lastIndexOf(';') + 1;
+    let lastNum = str.substring(index, str.length);
+    let returnVal = lastNum * (-1)
+    screen.innerHTML = str.substring(0, index) + returnVal;
+});
